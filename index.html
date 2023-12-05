@@ -1,4 +1,5 @@
 <!doctype html>
+<!--  -->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -23,7 +24,35 @@
 				<section>Slide 1: Test test test</section>
 				<section>Slide 2: 1234</section>
 				<section>Slide 3: 5678</section>
-			</div>
+				
+				
+				
+				 <section> <!-- Thank-You -->
+					<div style="margin: auto; width: 1000px; text-align: center"> <!-- text-shadow: 1px 1px 1px black; -->
+						<h3 style="color: darkorange">Thank you for your Attention</h3>
+					</div>
+					<h4 style="">Special thanks to:</h4> <!-- text-shadow: 1px 1px 1px black; -->
+					<p style="font-size: .8em">
+						<b>Friends & Colleagues:</b><br>
+							Jeffrey Gralnick
+							Daniel Bond
+							Kathleen Conway
+							David Hsu
+							Ivan Ishkov
+							Chi Ho Chan
+							Sol Choi
+							Michael Wold
+							Chana Introlegator
+							Madeline Ammend
+					</p>
+					<div style="font-size:.7em; ">
+						<p>
+							This work was funded by the Army Research Office grant agreement Nr: W911NF-22-1-0074.<br>
+							This work was supported by the resources and staff at the University of Minnesota University Imaging Centers (UIC), SCR_020997.
+						</p>
+					</div>
+				</section> 
+			</div>  <!-- class slides -->
 		</div>
 
 		<script src="reveal.js/dist/reveal.js"></script>
@@ -36,7 +65,12 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: 'h.v',
+				transition: 'slide',
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
