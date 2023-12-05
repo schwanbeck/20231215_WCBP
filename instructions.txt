@@ -1,0 +1,57 @@
+Create new repository under git [20231215_WCBP]
+Optional: Create index.html Hello world:
+> index.html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2023 West Coast Bacterial Physiology Conference</title>
+    </head>
+    <body>
+        <p>Hello world!</p>
+    </body>
+</html>
+
+Repository > Settings > Pages > Deploy from Master
+Wait a bit
+Link:
+https://schwanbeck.github.io/20231215_WCBP/
+
+Add ssh key: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+ssh-keygen -t ed25519 -C "schwan@umn.edu"
+Leave default file as is
+Set a password
+Start the ssh-agent in the background.
+$ eval "$(ssh-agent -s)"
+> Agent pid 59566
+$ ssh-add ~/.ssh/id_ed25519
+
+Add key:
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+$ cat ~/.ssh/id_ed25519.pub
+# Then select and copy the contents of the id_ed25519.pub file
+# displayed in the terminal to your clipboard
+
+Copy output to Github > Settings > Access > New SSH Key
+
+
+Clone repository locally (through ssh):
+git clone git@github.com:schwanbeck/20231215_WCBP.git
+
+git submodule add https://github.com/hakimel/reveal.js.git
+
+# pick a released version, take a look https://github.com/hakimel/reveal.js/releases to select a valid tag
+cd reveal.js && git checkout tags/5.0.2 && cd ..
+
+Add local files:
+git add .
+
+Check status:
+git status
+
+Commit:
+git commit -m "Message"
+Pus:
+git push
+
+
+
