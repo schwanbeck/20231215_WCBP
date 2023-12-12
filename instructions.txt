@@ -96,3 +96,10 @@ Edit index.html, update href links to include reference to "reveal.js/"
 </html>
 
 
+ffmpeg conversion from weirdly huge .avi to webm w/o sound:
+ffmpeg -i movie4_bb_Ch3_Gs_Delta6201624_Soneidensis_Lactate_152.avi -c:v libvpx-vp9 -an -vsync 2 -crf 25 movie4_Ch3_Gs_Delta16201624_Soneidensis_Lactate_164.webm
+
+QR code (RRGGBBAA -> A: Alpha):
+qrencode -o qrcode.png --foreground=FF8C00 --background=00000000 'https://schwanbeck.github.io/20231215_WCBP/#/'
+
+
