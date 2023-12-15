@@ -17,7 +17,7 @@ Link:
 https://schwanbeck.github.io/20231215_WCBP/
 
 Add ssh key: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-ssh-keygen -t ed25519 -C "schwan@umn.edu"
+ssh-keygen -t ed25519 -C "email@umn.edu"
 Leave default file as is
 Set a password
 Start the ssh-agent in the background.
@@ -101,5 +101,9 @@ ffmpeg -i movie4_bb_Ch3_Gs_Delta6201624_Soneidensis_Lactate_152.avi -c:v libvpx-
 
 QR code (RRGGBBAA -> A: Alpha):
 qrencode -o qrcode.png --foreground=FF8C00 --background=00000000 'https://schwanbeck.github.io/20231215_WCBP/#/'
+
+for file in *.avi; do ffmpeg -i "$file" -c:v libx264 -crf 25 -an -vsync 2 "${file%.avi}.mp4"; done  # Didn't work, output broken
+
+for file in *.avi; do ffmpeg -i "$file" -c:v libvpx-vp9 -an -vsync 2 -crf 23 "${file%.avi}.webm"; done
 
 
